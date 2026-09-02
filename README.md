@@ -6,7 +6,7 @@
 
 👉 [Try it](https://bacionejs.github.io/autorigger)
 
-This project takes a **legless vector unicorn** and **automagically constructs and animates forward-kinematic legs**. It's not great, but maybe it will inspire something greater.
+This project takes a **legless vector unicorn** and **automagically constructs and animates legs**. It's not great, but maybe it will inspire something greater.
 
 
 It measures the **vertical distance between the belly and the back**, identifies the **front and back edges of the mid-body**, and tucks the **hip joints** neatly inward from those boundaries. Using these proportions, it constructs a **connected skeleton** featuring **upper and lower leg bones** that scale and taper proportionally, animating them with **synchronized swinging motions** and phase offsets.
