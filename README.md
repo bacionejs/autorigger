@@ -4,7 +4,7 @@
 <img width="30%" src="https://github.com/user-attachments/assets/85be668a-c0ac-4c66-ac9d-ed25b5b0a45d" />
 
 
-👉 [Try it](https://bacionejs.github.io/autorun)
+👉 [Try it](https://bacionejs.github.io/autorigger)
 
 This project takes a **legless vector unicorn** and **automagically constructs and animates forward-kinematic legs**. It's not great, but maybe it will inspire something greater.
 
