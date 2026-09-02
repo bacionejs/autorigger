@@ -9,7 +9,7 @@
 This project takes a **legless vector unicorn** and **automagically constructs and animates legs**. It's not great, but maybe it will inspire something greater.
 
 
-It measures the **vertical distance between the belly and the back** at the unicorn's midpoint, identifies the **front and back edges of the mid-body**, and tucks the **hip joints** inward from those boundaries. It constructs a **connected skeleton** featuring **upper and lower leg bones** that scale and taper proportionally, animating them with **synchronized swinging motions** and phase offsets.
+It measures the **vertical distance between the belly and the back** at the unicorn's midpoint, identifies the **front and back edges of the mid-body**, and tucks the **hip joints** inward from those boundaries, constructing **portional legs**, and animating them.
 
 However, this **heuristic-based approach** relies entirely on the assumption that the path has a clean, predictable geometry; if you alter the outline or introduce unexpected curves, the **center-slicing logic** can easily miscalculate the body bounds or latch onto stray points. It also deliberately simplifies the anatomy by rendering **only two legs instead of four**, a shortcut justified by the fact that during a fast run the visual difference is barely noticeable, even if it matters more during a slow walk. It also assumes the unicorn is oriented to the right. Furthermore, because the animation relies strictly on an open **forward kinematic** chain driven by **hardcoded sine waves and fixed phase offsets** rather than inverse kinematics or physics, the limbs lack any environmental awareness, meaning they will clip through uneven ground or float in mid-air if the overall scale or posture shifts.
 
