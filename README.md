@@ -1,5 +1,6 @@
-<img width="30%" src="https://github.com/user-attachments/assets/da53b374-07dc-4897-8608-5aa2fe1b3d33" />
+
 <img width="30%" src="https://github.com/user-attachments/assets/a863ceed-a61f-45ae-8968-3c7fdfa3232b" />
+<img width="30%" src="https://github.com/user-attachments/assets/85be668a-c0ac-4c66-ac9d-ed25b5b0a45d" />
 
 
 👉 [Try it](https://bacionejs.github.io/autorun)
