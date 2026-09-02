@@ -40,9 +40,13 @@ bw1=th*s*0.8,
 bw2=bw1*0.38,
 l2=l1*(0.37/0.35),
 bw3=bw2*0.5,
+l3=l2*0.28,
+bw4=bw3*0.8,
 bone=(len,w1,w2)=>{let a=asin((w1-w2)/(2*len)),pb=new Path2D();pb.arc(0,0,w1/2,Pi+a,-Pi-a);pb.arc(len,0,w2/2,-Pi-a,Pi+a);return pb;},
+foot=(len,w)=>{let pb=new Path2D();pb.moveTo(-len*0.15,-w*0.2);pb.lineTo(len*0.2,-w*0.7);pb.lineTo(len*0.8,-w*1.0);pb.lineTo(len,-w*1.0);pb.lineTo(len,w*0.6);pb.lineTo(len*0.5,w*0.6);pb.lineTo(0,w*0.3);pb.closePath();return pb;},
 b1=bone(l1,bw1,bw2),
 b2=bone(l2,bw2,bw3),
+b3=foot(l3,bw4),
 joints=[{x:o.x+bx*s,y:o.y+my*s,ph:5.65},{x:o.x+fx*s,y:o.y+my*s,ph:2.51}],
 seg=(dx,dy,a,pb,sc=1)=>{x.save();x.translate(dx,dy);x.scale(sc,sc);x.rotate(a);x.fillStyle="black";x.fill(pb);x.restore();};
 return {draw(d){
@@ -53,8 +57,17 @@ return {draw(d){
   x.translate(0,-abs(sin(tm*8.33))*5);
   seg(o.x,o.y,0,path,s);
   joints.forEach(j=>{
-    let lt=tm*16.66+j.ph,a1=Pi-sin(lt)*0.85,a2=a1+max(0,cos(lt)*1.4);
-    seg(j.x,j.y,a1,b1);seg(j.x+cos(a1)*l1,j.y+sin(a1)*l1,a2,b2);
+    let lt=tm*16.66+j.ph,
+    a1=Pi-sin(lt)*0.85,
+    c=cos(lt),
+    flexFactor=0.5*(c+Math.sqrt(c*c+0.05)),
+    a2=a1+flexFactor*1.4,
+    a3=a2+flexFactor*0.8,
+    x1=j.x+cos(a1)*l1,y1=j.y+sin(a1)*l1,
+    x2=x1+cos(a2)*l2,y2=y1+sin(a2)*l2;
+    seg(j.x,j.y,a1,b1);
+    seg(x1,y1,a2,b2);
+    seg(x2,y2,a3,b3);
   });
   x.restore();
 }}}
