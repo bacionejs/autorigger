@@ -4,7 +4,7 @@
 <img width="30%" src="https://github.com/user-attachments/assets/85be668a-c0ac-4c66-ac9d-ed25b5b0a45d" />
 
 
-👉 [Try it](https://bacionejs.github.io/autorigger)
+👉 [Try it](https://bacionejs.github.io/autorigger) (you can also create your own shape and paste it into the html)
 
 This project takes a **legless vector unicorn** and **automagically constructs and animates legs**. It's not great, but maybe it will inspire something greater.
 
